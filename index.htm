@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen">
+  <script>
+  function getIP(json) {
+    document.getElementById("kcxd").innerHTML = json.ip;}
+  </script>
+  <style>
+  body {
+    overflow: hidden;
+  }
+  #titlemain {
+      top: 50%;
+      position: absolute;
+      font-family: "Oxygen";
+      transform: translateY(1000%);
+      width: 99%;
+      display: flex;
+      justify-content: center;
+      align-items: center
+      perspective: 1000px;
+      perspective-origin: 50% 50%;
+      -webkit-transform: translateY(1000%);
+  }
+  .slide-in {
+      animation: slide-in 2.6s forwards;
+      -webkit-animation: slide-in 2.6s forwards;
+  }
+
+  @keyframes slide-in {
+      100% { transform: translateY(-50%); }
+  }
+
+  @-webkit-keyframes slide-in {
+      100% { -webkit-transform: translateY(-50%); }
+  }
+  </style>
+</head>
+<body>
+  <div id="titlemain" class="slide-in">
+    <h2 id="kcxd">197.49.104.48</h2>
+  </div>
+  <script src="http://api.ipify.org?format=jsonp&callback=getIP"></script>
+  <script>
+    var $slider = document.getElementById('titlemain');
+    $slider.classList.contains('slide-in');
+  </script>
+</body>
+</html>
