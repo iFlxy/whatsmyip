@@ -2,10 +2,6 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen">
-  <script>
-  function getIP(json) {
-    document.getElementById("kcxd").innerHTML = json.ip;}
-  </script>
   <style>
   body {
     overflow: hidden;
@@ -41,7 +37,9 @@
   <div id="titlemain" class="slide-in">
     <h2 id="kcxd">Couldn't get IP</h2>
   </div>
-  <script src="http://api.ipify.org?format=jsonp&callback=getIP"></script>
+  <script>
+    fetch('https://api.my-ip.io/ip').then(document.getElementById("kcxd").innerHTML = response);
+  </script>
   <script>
     var $slider = document.getElementById('titlemain');
     $slider.classList.contains('slide-in');
