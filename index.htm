@@ -38,7 +38,7 @@
     <h2 id="kcxd">Couldn't get IP</h2>
   </div>
   <script>
-    fetch('https://api.my-ip.io/ip').then(document.getElementById("kcxd").innerHTML = response);
+    fetch('https://api.my-ip.io/ip.json').then(response => response.json()).then(data => document.getElementById("kcxd").innerHTML = data.ip);
   </script>
   <script>
     var $slider = document.getElementById('titlemain');
